@@ -19,12 +19,11 @@ body
 	background-color: rgb(35,35,100);
 	color: white;
 	font-family: "Comic Sans MS", Verdana, Arial, sans-serif;
-	min-width: 500px;
 }
 
 #liseret
 {
-	width: 20%;
+	width: 15%;
 	height: 1500px;
 	background: url("images/bandeau_nenuphar.jpg") no-repeat, url("images/texture_bleue.png");
 	background-color: rgb(29,43,72);
@@ -36,9 +35,22 @@ body
 
 #bloc_cv
 {
-	width: 75%;
+	width: 80%;
  	display: inline-block;
 	vertical-align: top;
+}
+
+@media only all and (max-width: 1024px)
+{
+	#liseret
+	{
+		display: none;
+	}
+
+	#bloc_cv
+	{
+		width: auto;
+	}
 }
 
 section
@@ -46,7 +58,6 @@ section
 	display: inline-block;
 	vertical-align: top;
 	margin: 5px;
-	min-width: 250px;
 }
 
 #experience
@@ -57,6 +68,19 @@ section
 #competence, #formation
 {
 	width: 23%;
+}
+
+@media only all and (max-width: 1024px)
+{
+	section
+	{
+		display: block;
+	}
+
+	#experience, #competence, #formation
+	{
+		width: auto;
+	}
 }
 
 h2
@@ -137,6 +161,15 @@ header h1
 	color: teal;
 }
 
+@media only all and (max-width: 530px)
+{
+	.photo
+	{
+		display: none;
+	}
+}
+
+
 /* Footer */
 
 footer p
@@ -145,10 +178,16 @@ footer p
 }
 
 
-/* Correctifs pour les vieilles versions d'Internet Explorer */
+
+/* Activation du positionnement type inline-block sur les vieilles versions d'IE */
 
 .old_ie #liseret, .old_ie #bloc_cv, .old_ie section
 {
 	display: inline;
 	zoom: 1;
+}
+
+.old_ie #liseret
+{
+	background-image: none;
 }
