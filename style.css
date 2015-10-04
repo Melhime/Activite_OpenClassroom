@@ -1,4 +1,6 @@
-@font-face { /* Définition d'une police personnalisée via @font-face */
+/* Définition d'une police personnalisée */
+
+@font-face {
 	font-family: 'desyrelregular';
 	src: url('polices/desyrel_regular/desyrel-webfont.eot');
 	src: url('polices/desyrel_regular/desyrel-webfont.eot?#iefix') format('embedded-opentype'),
@@ -9,38 +11,66 @@
 	font-style: normal;
 }
 
+
+/* Eléments principaux de la page */
+
 body
 {
-	background: url("images/bandeau_nenuphar.jpg") no-repeat, url("images/texture_bleue.png");/* Image de fond pour la page */
-	color: white; /* Changement de la couleur du texte */
+	background-color: rgb(35,35,100);
+	color: white;
 	font-family: "Comic Sans MS", Verdana, Arial, sans-serif;
+	min-width: 500px;
+}
 
-	/* Si l'insertion de deux images de fond n'est pas prise en charge par le navigateur */
-	background: url("images/bandeau_nenuphar.jpg") no-repeat;
+#liseret
+{
+	width: 20%;
+	height: 1500px;
+	background: url("images/bandeau_nenuphar.jpg") no-repeat, url("images/texture_bleue.png");
 	background-color: rgb(29,43,72);
+	display: inline-block;
+	vertical-align: top;
+	border: 3px black double;
+	border-radius: 10px;
 }
 
-h1, h2, h3
+#bloc_cv
 {
-	font-family: 'desyrelregular', "Comic Sans MS", Verdana, Arial, sans-serif; /* Utilisation de la police personnalisée */
+	width: 75%;
+ 	display: inline-block;
+	vertical-align: top;
 }
 
-h1
+section
 {
-	text-align: center; /* Changement de l'alignement du texte */
-	font-size: 3em;
+	display: inline-block;
+	vertical-align: top;
+	margin: 5px;
+	min-width: 250px;
+}
+
+#experience
+{
+	width: 48%;
+}
+
+#competence, #formation
+{
+	width: 23%;
 }
 
 h2
 {
+	font-family: 'desyrelregular', "Comic Sans MS", Verdana, Arial, sans-serif;
+	font-size: 1.5em;
+	color: black;
 	border: 3px black solid;
 	box-shadow: 6px 3px 6px black;
-	font-size: 2em;
-	color: black;
 }
 
 h3
 {
+	font-family: 'desyrelregular', "Comic Sans MS", Verdana, Arial, sans-serif;
 	text-decoration: underline;
 	color: teal;
 }
@@ -81,6 +111,24 @@ a:visited
 	color: gray;
 }
 
+
+/* Header */
+
+header h1
+{
+	font-family: 'desyrelregular', "Comic Sans MS", Verdana, Arial, sans-serif;
+	text-align: center;
+	font-size: 3em;
+}
+
+.photo
+{
+	float: right;
+	border: 3px black double;
+	border-radius: 10px;
+	box-shadow: 6px 6px 6px gray;
+}
+
 .citation
 {
 	text-align: center;
@@ -89,15 +137,18 @@ a:visited
 	color: teal;
 }
 
-.photo
+/* Footer */
+
+footer p
 {
-	float: right;
-	border: 3px black double; /* Bordure sur la photo */
-	border-radius: 10px;
-	box-shadow: 6px 6px 6px gray; /* Ombre sur la photo */
+	text-align: center;
 }
 
-.dessous
+
+/* Correctifs pour les vieilles versions d'Internet Explorer */
+
+.old_ie #liseret, .old_ie #bloc_cv, .old_ie section
 {
-	clear: both;
+	display: inline;
+	zoom: 1;
 }
